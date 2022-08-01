@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.active-warning:hover{
+    color: orange;
+}
+
+.flex-div{
+    display: flex;
+    justify-content:flex-start;
+}
+
+.shadow-md{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.19)
+}
+
+.warp{
+    max-width: 500px;
+    margin: auto;
+}
+
+.warp1{
+    max-width: 350px;
+    margin: auto;
+}
+
+.modalHeader{
+    padding: 15px 15px 0 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile{
+    border-radius: 15px;
+}
+
+.card-profile{
+    border: 1px solid rgb(206, 203, 203);
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    max-width: 300px;
+}
+
+.mainProfile{
+    position: relative;
+}
+
+.mainImg{
+    border: 1px solid rgb(179, 175, 175);
+    border-radius: 8px;
+}
+
+.profilecircle{
+    border-radius: 50%;
+    border: 3px solid skyblue;
+    height: 80px;
+    width: 80px;
+}
+
+.posts{
+    font-size: 15px;
+}
+
+.profilepostImg{
+    border-radius: 50%;
+    border: 3px solid skyblue;
+    height: 45px;
+    width: 45px;
+}
+
+.profileImg{
+    position: absolute;
+    top: 97px;
+    border-radius: 50%;
+    border: 3px solid skyblue;
+    height: 128px;
+    width: 128px;
+}
+
+.bell{
+    font-size: 25px;
+    color: red;
+}
+.bell1{
+    font-size: 25px;
+    color: slategray;
+}
+
+@media screen and (max-width:990) {
+    .navi{
+        display: flex;
+    }
+}
