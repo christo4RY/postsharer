@@ -21,8 +21,10 @@
         </div>
     </div>
     <div class="col my-2">
-        @foreach ($posts as $post)
+        @forelse ($posts as $post)
         <x-post-card :post="$post" />
-        @endforeach
+        @empty
+        <p class="alert alert-danger text-center"><b>သင်ရှာဖွေသောအကောင့်ကိုမတွေ့ပါ။</b></p>
+        @endforelse
     </div>
 </div>

@@ -46,7 +46,7 @@
             <div class="card-body">
                 <form action="" method="POST">
                     @csrf
-                    <textarea class="form-control" name="body" required placeholder="Leave a comment" cols="10"
+                    <textarea class="form-control" name="body" required placeholder="မှတ်ချက်ရေးရန်" cols="10"
                         rows="5"></textarea>
                     <div class="d-flex justify-content-end mt-3">
                         <button type="submit" class="btn btn-primary">Send</button>

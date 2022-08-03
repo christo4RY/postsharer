@@ -17,15 +17,6 @@ class PostController extends Controller
         ]);
     }
 
-    // public function show()
-    // {
-    //     return view('posts', [
-    //         'posts' => Post::latest()
-    //             ->filter(['search', 'profile'])
-    //             ->get(),
-    //     ]);
-    // }
-
     public function showOne(Post $post)
     {
         return view('post', [
@@ -47,9 +38,11 @@ class PostController extends Controller
         $slug = Str::slug($substr);
         $formData['user_id'] = auth()->id();
         $formData['slug'] = $slug;
-        $formData['thumbnail'] = request()
-            ->file('thumbnail')
-            ->store('thumbnails');
+        $formData['thumbnail'] = request()->file('thumbnail')
+            ? request()
+                ->file('thumbnail')
+                ->store('thumbnails')
+            : null;
         Post::create($formData);
         return to_route('home');
     }

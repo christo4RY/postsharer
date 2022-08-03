@@ -2,12 +2,20 @@
 
 namespace App\Models;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory , Searchable;
+
+    public function toSearchableArray()
+    {
+        return [
+        'body' => $this->body,
+    ];
+    }
 
     public function user()
     {
@@ -19,24 +27,23 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function followers(){
+    public function followers()
+    {
         return $this->belongsToMany(User::class);
     }
 
-    public function unSubscribe(){
+    public function unSubscribe()
+    {
         return $this->followers()->detach(auth()->id());
     }
 
-    public function subscribe(){
+    public function subscribe()
+    {
         return $this->followers()->attach(auth()->id());
     }
 
     public function ScopeFilter($query)
     {
-        // $query->when(request('search'), function ($query, $search) {
-        //     $query->where('body', 'LIKE', '%' . $search . '%');
-        // });
-
         $query->when(request('search'), function ($query, $profile) {
             $query->whereHas('user', function ($query) use ($profile) {
                 $query->where('name', 'LIKE', '%' . $profile . '%');

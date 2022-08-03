@@ -21,8 +21,8 @@
             <div class="body m-3">
                 <form action="" enctype="multipart/form-data" method="POST">
                     @csrf
-                    <textarea name="body" cols="10" rows="5" class="border border-0 form-control"
-                        value="{{old('body')}}"></textarea>
+                    <textarea name="body" cols="10" rows="5" placeholder="ပို့စ်ကို ကြိုက်သလို ရေးလို့ရပါတယ်။"
+                        class="border border-0 form-control" value="{{old('body')}}"></textarea>
                     @error('body')
                     <p class="text-danger">{{$message}}</p>
                     @enderror

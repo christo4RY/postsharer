@@ -5,7 +5,7 @@
                 <div class="d-flex">
                     <div>
                         <a href="/posts/users/{{ $post->user->username }}/profile">
-                            <img class="profilecircle mt-2" src="{{ $post->user->avator }}" alt="">
+                            <img class="profilecircle mt-2" src='{{"/storage/".$post->user->avator }}' alt="">
 
                         </a>
                     </div>
@@ -35,7 +35,8 @@
                     @csrf
                     @method('PATCH')
                     <textarea name="body" cols="10" rows="5" class="border border-0 form-control"
-                        value="{{ old('body') }}">{{ $post->body }}</textarea>
+                        value="{{ old('body') }}"
+                        placeholder="သင့်ပို့စ်ကို ပြင်ဆင်ရေးသားရန်">{{ $post->body }}</textarea>
                     @error('body')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
