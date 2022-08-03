@@ -1,4 +1,7 @@
 <x-layout>
+    <x-slot name="title">
+        <title>{{$user->name}}</title>
+    </x-slot>
     <div class="container">
         <div class="col-md-10 mx-auto">
             <div class="card my-3">

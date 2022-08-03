@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-between">
             <div class="d-flex">
                 <div>
-                    <img src="{{ $comment->user->avator }}" height="50" width="50"
+                    <img src='{{"/storage/".$comment->user->avator }}' height="50" width="50"
                         class="rounded-circle border border-2 border-secondary" alt="">
                 </div>
                 <div class="ms-3">

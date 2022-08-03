@@ -1,5 +1,7 @@
 <x-auth-layout>
-
+    <x-slot name="title">
+        <title>Register</title>
+    </x-slot>
     <div class="container">
         <div class="col-md-8 mx-auto mt-5">
             <h1 class="text-primary text-center fw-bold">PostSharer</h1>

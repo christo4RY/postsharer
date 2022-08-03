@@ -1,9 +1,15 @@
 @auth
 <x-layout>
+    <x-slot name="title">
+        <title>Post Share</title>
+    </x-slot>
     <x-posts :posts="$posts" />
 </x-layout>
 @else
 <x-auth-layout>
+    <x-slot name="title">
+        <title>Login</title>
+    </x-slot>
     <div class="container">
         <div class="col-md-8 mx-auto mt-5">
             <h1 class="text-primary text-center fw-bold">PostSharer</h1>

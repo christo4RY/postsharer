@@ -7,11 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
-    <title>PostSharer</title>
+    {{$title}}
 </head>
 
 <body class="bg-light">
-
     {{ $slot }}
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

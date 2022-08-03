@@ -1,4 +1,7 @@
 <x-layout>
+    <x-slot name="title">
+        <title>{{$post->slug}}</title>
+    </x-slot>
     <x-profile-layout>
         <div class="card-body">
             <div class="d-flex justify-content-between">
