@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
-
-    public function store(Post $post){
+    public function store(Post $post)
+    {
         $commentData = request()->validate([
             'body' => ['required','min:5']
         ]);
@@ -20,11 +20,21 @@ class CommentController extends Controller
             'body' => request('body'),
         ]);
 
-        $followers = $post->followers->filter(fn($follower)=> $follower->id!=auth()->id());
-        $followers->each(function($follower) use ($post){
+        $followers = $post->followers->filter(fn ($follower) => $follower->id!=auth()->id());
+        $followers->each(function ($follower) use ($post) {
             Mail::to($follower->email)->queue(new MustBeFollower($post));
         });
 
         return redirect("/post/$post->slug");
+    }
+
+    public function destory(Post $post)
+    {
+        foreach ($post->comments as $comment) {
+            if (auth()->id() == $comment->user->id) {
+                $comment->delete();
+                return back();
+            }
+        }
     }
 }

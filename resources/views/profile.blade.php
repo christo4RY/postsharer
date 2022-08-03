@@ -14,7 +14,7 @@
                                                 width="100%" height="175px" alt="">
                                         </div>
                                         <div class="userProfile ">
-                                            <img class="profileImg mt-2" src="{{ $user->avator }}" alt="">
+                                            <img class="profileImg mt-2" src='{{"/storage/".$user->avator }}' alt="">
                                         </div>
                                     </div>
                                     <div class="text-end me-2">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col mx-auto">
                         @if ($user->posts->count())
-                            <x-profiles :userPosts="$user
+                        <x-profiles :userPosts="$user
                                 ->posts()
                                 ->latest()
                                 ->paginate(3)" />

@@ -1,9 +1,9 @@
-<div class="card shadow-md mb-4">
+<div {{$attributes->merge(['class'=>'card shadow-md mb-4'])}}>
     <div class="card-body">
         <div class="flex-div">
             <div>
                 <a href="/posts/users/{{$post->user->username}}/profile">
-                    <img src="{{ $post->user->avator }}" height="45" width="45"
+                    <img src='{{"/storage/".$post->user->avator }}' height="45" width="45"
                         class="rounded-circle border border-info border-2" alt="">
                 </a>
 

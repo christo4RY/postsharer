@@ -12,6 +12,7 @@
                 </div>
             </div>
         </div>
+        <x-footer-login />
     </div>
 
 

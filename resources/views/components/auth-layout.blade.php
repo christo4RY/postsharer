@@ -10,7 +10,7 @@
     <title>PostSharer</title>
 </head>
 
-<body>
+<body class="bg-light">
 
     {{ $slot }}
     <script src="js/bootstrap.bundle.min.js"></script>

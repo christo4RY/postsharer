@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg  bg-light">
     <div class="container">
         <a class="navbar-brand" href="/">
             <h3 class="h2 text-primary">PostSharer</h3>
