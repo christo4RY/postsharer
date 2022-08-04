@@ -3,7 +3,7 @@
         {{$post->body}}
         <div class="image">
             @if (isset($post->thumbnail))
-            <img src="/storage/{{$post->thumbnail}}" class="mt-3 img" alt="">
+            <img src='{{asset("storage/$post->thumbnail")}}' class="mt-3 img" alt="">
             @endif
         </div>
     </div>
