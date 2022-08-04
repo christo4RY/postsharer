@@ -3,7 +3,7 @@
     <div class="card-body">
         <div class="d-flex">
             <div>
-                <img class="profilepostImg mt-2" src='{{"/storage/".$userPost->user->avator }}' alt="">
+                <img class="profilepostImg mt-2" src="{{$userPost->user->avator }}" alt="">
 
             </div>
             <div class="ms-3">

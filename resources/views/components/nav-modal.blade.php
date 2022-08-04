@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn mx-3 rounded-circle nav-link btn-link" data-bs-toggle="modal"
     data-bs-target="#exampleModal">
-    <img src='{{"/storage/".auth()->user()->avator }}' class="rounded-circle border border-info border-2" height="50"
-        width="50" alt="">
+    <img src="{{auth()->user()->avator }}" class="rounded-circle border border-info border-2" height="50" width="50"
+        alt="">
 </button>
 
 <!-- Modal -->
@@ -16,8 +16,7 @@
             <div class="modal-body">
                 <div class="card-profile">
                     <div>
-                        <img src='{{"/storage/".auth()->user()->avator }}' class="profile" height="150" width="180"
-                            alt="">
+                        <img src="{{auth()->user()->avator }}" class="profile" height="150" width="180" alt="">
                     </div>
                     <h3 class="text-primary my-3">{{ auth()->user()->name }}</h3>
                     <ul class="list-group">

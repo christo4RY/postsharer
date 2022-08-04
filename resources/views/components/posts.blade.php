@@ -5,7 +5,7 @@
                 <div class="d-flex">
                     <div>
                         <a href="/posts/users/{{auth()->user()->username}}/profile">
-                            <img src='{{"storage/".auth()->user()->avator }}' height="50px" width="50px"
+                            <img src="{{auth()->user()->avator }}" height="50px" width="50px"
                                 class="rounded-circle border border-2 border-info" alt="">
                         </a>
                     </div>

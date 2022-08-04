@@ -3,7 +3,7 @@
         <div class="flex-div">
             <div>
                 <a href="/posts/users/{{$post->user->username}}/profile">
-                    <img src='{{"/storage/".$post->user->avator }}' height="45" width="45"
+                    <img src="{{$post->user->avator }}" height="45" width="45"
                         class="rounded-circle border border-info border-2" alt="">
                 </a>
 
