@@ -16,7 +16,7 @@
 <body>
     <x-navbar />
     {{ $slot }}
-    <x-footer />
+    <x-footer class="bg-dark text-white" />
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 
