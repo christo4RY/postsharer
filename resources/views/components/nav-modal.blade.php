@@ -21,7 +21,7 @@
                     <h3 class="text-primary my-3">{{ auth()->user()->name }}</h3>
                     <ul class="list-group">
                         <li class="list-group-item text-start"><b>Email: </b> {{ auth()->user()->email }}</li>
-                        <li class="list-group-item pt-3">
+                        {{-- <li class="list-group-item pt-3">
                             <form action="/upload/{{ auth()->user()->username }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
@@ -29,6 +29,10 @@
                                 <input type="file" name="avator" class="form-control d-inline-block w-50">
                                 <button type="submit" class="btn btn-outline-primary">Upload</button>
                             </form>
+                        </li> --}}
+                        <li class="list-group-item">
+                            <a href="posts/users/{{auth()->user()->username}}/profile"
+                                class="btn btn-warning w-100">Profile</a>
                         </li>
                     </ul>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -28,10 +29,13 @@ class AuthController extends Controller
     {
         $formData = request()->validate([
             'name' => ['required', 'min:3', 'max:10'],
-            'username' => ['required', 'min:3', Rule::unique('users', 'username')],
+            'username' => [ Rule::unique('users', 'username')],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8'],
         ]);
+        $lowerCase = Str::lower(request('name'));
+        $username = Str::replace(' ', '-', $lowerCase);
+        $formData['username'] = $username ;
         $user = User::create($formData);
         auth()->login($user);
         return redirect('/');

@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::table('users', function (Blueprint $table) {
             $table
                 ->string('avator')
-                ->default("/avators/default.png")
+                ->default("https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png")
                 ->after('username')
                 ->nullable();
         });
