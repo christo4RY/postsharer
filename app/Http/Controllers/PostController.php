@@ -32,6 +32,7 @@ class PostController extends Controller
     {
         $formData = request()->validate([
             'body' => 'required | min:3',
+            'thumbnail' => 'mimes:jpeg,png,jpg,gif'
         ]);
         $substr = Str::substr($formData['body'], 0, 50);
         $slug = Str::slug($substr);
@@ -58,6 +59,7 @@ class PostController extends Controller
     {
         $formData = request()->validate([
             'body' => 'required | min:5',
+            'thumbnail' => 'mimes:jpeg,png,jpg,gif'
         ]);
         $formData['slug'] = $post->slug;
         $formData['user_id'] = auth()->id();

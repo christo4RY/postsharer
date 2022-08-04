@@ -43,7 +43,7 @@
                     @error('body')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
-                    <input type="file" class="form-control my-2" name="thumbnail">
+                    <input type="file" accept="image/*" class="form-control my-2" name="thumbnail">
                     @if (isset($post->thumbnail))
                     <img src="/storage/{{$post->thumbnail}}" style="border-radius: 8px" width="200px" height="100px" />
                     @endif
