@@ -33,8 +33,8 @@ class AuthController extends Controller
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:8'],
         ]);
-        $lowerCase = Str::lower(request('name'));
-        $username = Str::replace(' ', '-', $lowerCase);
+        $studly = Str::studly(request('name'));
+        $username = Str::lower($studly);
         $formData['username'] = $username ;
         $user = User::create($formData);
         auth()->login($user);

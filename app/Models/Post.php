@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory ;
-
+    use HasFactory;
 
     public function user()
     {
@@ -37,10 +36,8 @@ class Post extends Model
 
     public function ScopeFilter($query)
     {
-        $query->when(request('search'), function ($query, $profile) {
-            $query->whereHas('user', function ($query) use ($profile) {
-                $query->where('name', 'LIKE', '%' . $profile . '%');
-            });
+        $query->when(request('search'), function ($query, $search) {
+            $query->where('body', 'LIKE', '%' . $search . '%');
         });
     }
 }

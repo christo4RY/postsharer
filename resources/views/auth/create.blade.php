@@ -8,7 +8,7 @@
                 <div class="d-flex">
                     <div>
                         <a href="/posts/users/{{ auth()->user()->username }}/profile">
-                            <img class="profilecircle mt-2" src='{{"/storage/".auth()->user()->avator }}' alt="">
+                            <img class="profilecircle mt-2" src="{{auth()->user()->avator }}" alt="">
 
                         </a>
                     </div>

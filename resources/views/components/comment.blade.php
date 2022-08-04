@@ -4,7 +4,7 @@
             <div class="d-flex">
                 <div>
                     <img src="{{$comment->user->avator }}" height="50" width="50"
-                        class="rounded-circle border border-2 border-secondary" alt="">
+                        class="rounded-circle border border-2 border-info" alt="">
                 </div>
                 <div class="ms-3">
                     <h6>{{ $comment->user->name }}</h6>

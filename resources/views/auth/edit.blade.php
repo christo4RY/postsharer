@@ -8,7 +8,7 @@
                 <div class="d-flex">
                     <div>
                         <a href="/posts/users/{{ $post->user->username }}/profile">
-                            <img class="profilecircle mt-2" src='{{"/storage/".$post->user->avator }}' alt="">
+                            <img class="profilecircle mt-2" src="{{$post->user->avator }}" alt="">
 
                         </a>
                     </div>
@@ -45,8 +45,8 @@
                     @enderror
                     <input type="file" class="form-control my-2" name="thumbnail">
                     @if (isset($post->thumbnail))
-                    <img src='{{"/storage/$post->thumbnail"}}' style="border-radius: 8px" width="200px"
-                        height="100px" /> @endif
+                    <img src="/storage/{{$post->thumbnail}}" style="border-radius: 8px" width="200px" height="100px" />
+                    @endif
                     <button class="btn mt-2 w-100 btn-primary" type="submit">Update</button>
                 </form>
             </div>
