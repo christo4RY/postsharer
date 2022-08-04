@@ -7,14 +7,13 @@
             <h1 class="text-primary text-center fw-bold">PostSharer</h1>
             <div class="warp1 mt-4">
                 <div class="card shadow-md p-3">
-
                     <div class="card-body">
                         <x-register-form />
                     </div>
                 </div>
             </div>
         </div>
-        <x-footer-login />
+        <x-footer />
     </div>
 
 
