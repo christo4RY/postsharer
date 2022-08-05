@@ -27,8 +27,8 @@
                     <textarea name="body" cols="10" rows="5" placeholder="ပို့စ်ကို ကြိုက်သလို ရေးလို့ရပါတယ်။"
                         class="border border-0 form-control" value="{{old('body')}}"></textarea>
                     <x-error name="body" />
-                    <input type="file" accept="image/*" class="form-control my-2" name="thumbnail">
-                    <x-error name="thumbnail" />
+                    {{-- <input type="file" accept="image/*" class="form-control my-2" name="thumbnail">
+                    <x-error name="thumbnail" /> --}}
                     <button class="btn mt-2 w-100 btn-primary" type="submit">Create Post</button>
                 </form>
             </div>

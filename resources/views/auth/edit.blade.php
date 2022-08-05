@@ -40,13 +40,11 @@
                     <textarea name="body" cols="10" rows="5" class="border border-0 form-control"
                         value="{{ old('body') }}"
                         placeholder="သင့်ပို့စ်ကို ပြင်ဆင်ရေးသားရန်">{{ $post->body }}</textarea>
-                    @error('body')
-                    <p class="text-danger">{{ $message }}</p>
-                    @enderror
-                    <input type="file" accept="image/*" class="form-control my-2" name="thumbnail">
+                    <x-error name="body" />
+                    {{-- <input type="file" accept="image/*" class="form-control my-2" name="thumbnail">
                     @if (isset($post->thumbnail))
                     <img src="/storage/{{$post->thumbnail}}" style="border-radius: 8px" width="200px" height="100px" />
-                    @endif
+                    @endif --}}
                     <button class="btn mt-2 w-100 btn-primary" type="submit">Update</button>
                 </form>
             </div>

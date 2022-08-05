@@ -32,17 +32,17 @@ class PostController extends Controller
     {
         $formData = request()->validate([
             'body' => 'required | min:3',
-            'thumbnail' => 'mimes:jpeg,png,jpg,gif'
+            // 'thumbnail' => 'mimes:jpeg,png,jpg,gif'
         ]);
         $substr = Str::substr($formData['body'], 0, 50);
         $slug = Str::slug($substr);
         $formData['user_id'] = auth()->id();
         $formData['slug'] = $slug;
-        $formData['thumbnail'] = request()->file('thumbnail')
-            ? request()
-                ->file('thumbnail')
-                ->store('thumbnails')
-            : null;
+        // $formData['thumbnail'] = request()->file('thumbnail')
+        //     ? request()
+        //         ->file('thumbnail')
+        //         ->store('thumbnails')
+        //     : null;
         Post::create($formData);
         return to_route('home');
     }
@@ -59,15 +59,15 @@ class PostController extends Controller
     {
         $formData = request()->validate([
             'body' => 'required | min:5',
-            'thumbnail' => 'mimes:jpeg,png,jpg,gif'
+            // 'thumbnail' => 'mimes:jpeg,png,jpg,gif'
         ]);
         $formData['slug'] = $post->slug;
         $formData['user_id'] = auth()->id();
-        $formData['thumbnail'] = request()->file('thumbnail')
-            ? request()
-                ->file('thumbnail')
-                ->store('thumbnails')
-            : $post->thumbnail;
+        // $formData['thumbnail'] = request()->file('thumbnail')
+        //     ? request()
+        //         ->file('thumbnail')
+        //         ->store('thumbnails')
+        //     : $post->thumbnail;
         $post->update($formData);
         return to_route('home');
     }
